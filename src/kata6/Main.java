@@ -2,14 +2,12 @@ package kata6;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import toys.Car;
-import toys.Helicopter;
-import toys.SerialNumberGenerator;
+import toys.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        SerialNumberGenerator generator = new SerialNumberGenerator();
+        ToyBusiness business = new ToyBusiness();
         
         ArrayList<Car> cars = new ArrayList<>();
         ArrayList<Helicopter> helicopters = new ArrayList<>();
@@ -22,10 +20,7 @@ public class Main {
             
             switch (line) {
                 case "car":
-                    Car car = new Car(generator.next());
-                    car.pack();
-                    car.label();
-                    cars.add(car);
+                    cars.add(business.createCar());
                     // Comprobación funcionalidad
                     System.out.print("Built Cars: ");
                     for (int i = 0; i < cars.size(); i++) {
@@ -35,10 +30,7 @@ public class Main {
                     System.out.println("");
                     break;
                 case "helicopter":
-                    Helicopter hel = new Helicopter(generator.next());
-                    hel.pack();
-                    hel.label();
-                    helicopters.add(hel);
+                    helicopters.add(business.createrHelicopter());
                     // Comprobación funcionalidad
                     System.out.print("Built Helicopters: ");
                     for (int i = 0; i < helicopters.size(); i++) {
@@ -52,7 +44,6 @@ public class Main {
                     break;
                 default:
                     System.out.println("Command unknown!");
-                    break;
             }
             
         }
