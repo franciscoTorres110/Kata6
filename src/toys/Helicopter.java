@@ -1,11 +1,11 @@
 package toys;
 
-public class Car {
+public class Helicopter {
     
     final private int serialNumber;
-    final private String type="car";
+    final private String type="helicopter";
 
-    public Car(int serialNumber) {
+    public Helicopter(int serialNumber) {
         this.serialNumber = serialNumber;
     }
     
@@ -19,6 +19,7 @@ public class Car {
     
     public void pack(){
         System.out.printf("Packing '%s' '%d'\n",this.type,this.serialNumber);
+
     }
     
     public void label(){
