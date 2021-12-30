@@ -1,8 +1,8 @@
-package kata6;
+package main;
 
-//import branches.AmericanToyBusiness;
-import branches.AsianToyBusiness;
 import business.ToyBusiness;
+import factories.regionalfactories.AmericanToyFactory;
+import factories.regionalfactories.AsianToyFactory;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -11,7 +11,8 @@ import toyproducts.Toy;
 public class Main {
 
     public static void main(String[] args) {
-        ToyBusiness business = new AsianToyBusiness();
+        //ToyBusiness business = new ToyBusiness(new AmericanToyFactory());
+        ToyBusiness business = new ToyBusiness(new AsianToyFactory());
         
         ArrayList<Toy> toys = new ArrayList<>();
         
@@ -24,7 +25,7 @@ public class Main {
             switch (line) {
                 case "car":
                 case "helicopter":
-                    toys.add(business.createToy(line));
+                    toys.add(business.produceToy(line));
                     
                     // Comprobación funcionalidad
                     System.out.println(
