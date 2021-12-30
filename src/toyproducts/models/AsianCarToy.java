@@ -15,10 +15,6 @@ public class AsianCarToy implements Toy{
     public int getSerialNumber() {
         return serialNumber;
     }
-
-    public String getType() {
-        return type;
-    }
     
     @Override
     public void pack(){

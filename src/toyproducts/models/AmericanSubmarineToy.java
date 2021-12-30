@@ -2,12 +2,12 @@ package toyproducts.models;
 
 import toyproducts.Toy;
 
-public class AmericanHelicopterToy implements Toy{
+public class AmericanSubmarineToy implements Toy{
     
     final private int serialNumber;
-    final private String type="helicopter";
+    final private String type="submarine";
 
-    public AmericanHelicopterToy(int serialNumber) {
+    public AmericanSubmarineToy(int serialNumber) {
         this.serialNumber = serialNumber;
     }
     
@@ -15,11 +15,10 @@ public class AmericanHelicopterToy implements Toy{
     public int getSerialNumber() {
         return serialNumber;
     }
-    
+
     @Override
     public void pack(){
         System.out.printf("Packing '%s' '%d'\n",this.type,this.serialNumber);
-
     }
     
     @Override
@@ -29,7 +28,7 @@ public class AmericanHelicopterToy implements Toy{
 
     @Override
     public String toString() {
-        return "AmericanHelicopterToy{" + "serialNumber=" + serialNumber + '}';
+        return "AmericanSubmarineToy{" + "serialNumber=" + serialNumber + '}';
     }
     
 }

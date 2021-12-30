@@ -1,8 +1,9 @@
 package main;
 
 import business.ToyBusiness;
-import factories.regionalfactories.AmericanToyFactory;
-import factories.regionalfactories.AsianToyFactory;
+import factories.regionalfactories.AmericanCarToyFactory;
+import factories.regionalfactories.AmericanSubmarineToyFactory;
+import factories.regionalfactories.AsianHelicopterToyFactory;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -11,9 +12,10 @@ import toyproducts.Toy;
 public class Main {
 
     public static void main(String[] args) {
-        //ToyBusiness business = new ToyBusiness(new AmericanToyFactory());
-        ToyBusiness business = new ToyBusiness(new AsianToyFactory());
-        
+        ToyBusiness business = new ToyBusiness();
+        business.add("car", new AmericanCarToyFactory());
+        business.add("helicopter", new AsianHelicopterToyFactory());
+        business.add("submarine", new AmericanSubmarineToyFactory());
         ArrayList<Toy> toys = new ArrayList<>();
         
         Scanner input = new Scanner(System.in);
@@ -25,6 +27,7 @@ public class Main {
             switch (line) {
                 case "car":
                 case "helicopter":
+                case "submarine":
                     toys.add(business.produceToy(line));
                     
                     // Comprobación funcionalidad
