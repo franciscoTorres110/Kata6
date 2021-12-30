@@ -1,17 +1,17 @@
 package kata6;
 
-import toyproducts.models.HelicopterToy;
-import toyproducts.models.CarToy;
+//import branches.AmericanToyBusiness;
+import branches.AsianToyBusiness;
+import business.ToyBusiness;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import toyproducts.Toy;
-import toys.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        ToyBusiness business = new ToyBusiness();
+        ToyBusiness business = new AsianToyBusiness();
         
         ArrayList<Toy> toys = new ArrayList<>();
         

@@ -2,12 +2,12 @@ package toyproducts.models;
 
 import toyproducts.Toy;
 
-public class CarToy implements Toy{
+public class AsianHelicopterToy implements Toy{
     
     final private int serialNumber;
-    final private String type="car";
+    final private String type="helicopter";
 
-    public CarToy(int serialNumber) {
+    public AsianHelicopterToy(int serialNumber) {
         this.serialNumber = serialNumber;
     }
     
@@ -23,6 +23,7 @@ public class CarToy implements Toy{
     @Override
     public void pack(){
         System.out.printf("Packing '%s' '%d'\n",this.type,this.serialNumber);
+
     }
     
     @Override
@@ -32,7 +33,7 @@ public class CarToy implements Toy{
 
     @Override
     public String toString() {
-        return "CarToy{" + "serialNumber=" + serialNumber + '}';
+        return "AsianHelicopterToy{" + "serialNumber=" + serialNumber + '}';
     }
     
 }
