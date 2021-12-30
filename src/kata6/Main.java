@@ -1,7 +1,11 @@
 package kata6;
 
+import toyproducts.models.HelicopterToy;
+import toyproducts.models.CarToy;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import toyproducts.Toy;
 import toys.*;
 
 public class Main {
@@ -9,8 +13,7 @@ public class Main {
     public static void main(String[] args) {
         ToyBusiness business = new ToyBusiness();
         
-        ArrayList<Car> cars = new ArrayList<>();
-        ArrayList<Helicopter> helicopters = new ArrayList<>();
+        ArrayList<Toy> toys = new ArrayList<>();
         
         Scanner input = new Scanner(System.in);
         String line = "";
@@ -20,24 +23,14 @@ public class Main {
             
             switch (line) {
                 case "car":
-                    cars.add(business.createCar());
-                    // Comprobación funcionalidad
-                    System.out.print("Built Cars: ");
-                    for (int i = 0; i < cars.size(); i++) {
-                        System.out.print(cars.get(i).getSerialNumber());
-                        if (i!=cars.size()-1) {System.out.print(", ");}
-                    }
-                    System.out.println("");
-                    break;
                 case "helicopter":
-                    helicopters.add(business.createrHelicopter());
+                    toys.add(business.createToy(line));
+                    
                     // Comprobación funcionalidad
-                    System.out.print("Built Helicopters: ");
-                    for (int i = 0; i < helicopters.size(); i++) {
-                        System.out.print(helicopters.get(i).getSerialNumber());
-                        if (i!=helicopters.size()-1) {System.out.print(", ");}
-                    }
-                    System.out.println("");
+                    System.out.println(
+                            "Built toys: "+toys.stream()
+                                    .map(c -> c.toString())
+                                    .collect(Collectors.joining(", ")));
                     break;
                 case "exit":
                     System.out.println("Exiting...");
